@@ -1,9 +1,17 @@
-package br.com.alura.mvc.model;
+package com.example.demo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
 public class Pedido {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)  //cria uma tabela pedido com uma coluna id com auto encremeto
+    private long id;
 
     private String nomeProduto;
     private BigDecimal valorNegociavel;
