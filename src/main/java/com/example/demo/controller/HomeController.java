@@ -13,12 +13,12 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    @Autowired                                    //pedi para o spring uma instancia de repository
-    private PedidosRepository repository;         //separando a controladora do repositorio, onde agora para acessar o banco de dados ele tem que chamar a clase PedidosRepository
+    @Autowired                                           //pedi para o spring uma instancia de repository
+    private PedidosRepository pedidosRepository;         //separando a controladora do repositorio, onde agora para acessar o banco de dados ele tem que chamar a clase PedidosRepository
 
     @GetMapping("/home")
     public String home(Model model){
-        List<Pedido> pedidos =repository.recuperaTodosOsPedidos();
+        List<Pedido> pedidos = pedidosRepository.findAll();
         model.addAttribute("pedidos",pedidos);
         return "home";
     }
