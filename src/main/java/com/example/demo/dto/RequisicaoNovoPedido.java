@@ -1,15 +1,17 @@
 package com.example.demo.dto;
-
 import com.example.demo.model.Pedido;
+import javax.validation.constraints.NotBlank;
+
 
 public class RequisicaoNovoPedido {
 
+    @NotBlank  //NotBlank.requisicaoNovoProduto.nomeProduto = campo deve ser preenchido
     private String nomeProduto;
+    @NotBlank
     private String urlProduto;
+    @NotBlank
     private String urlImagem;
     private String descricao;
-
-
 
     public String getNomeProduto() {
         return nomeProduto;
