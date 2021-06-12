@@ -28,7 +28,7 @@ public class HomeController {
 
 
 
-  @GetMapping("/{status}")                                                         //passando uma variavel que se altera , de acordo com o valor passado
+    @GetMapping("/{status}")                                                         //passando uma variavel que se altera , de acordo com o valor passado
     public String porStatus(@PathVariable("status") String status, Model model) {   //@pathVarivel, passa para a string a variavel escrita na url
         List<Pedido> pedidos = pedidosRepository.findByStatus(StatusPedido.valueOf(status.toUpperCase()));  //converte a string  em um enum presente no StatusPedido.
         model.addAttribute("pedidos", pedidos);
