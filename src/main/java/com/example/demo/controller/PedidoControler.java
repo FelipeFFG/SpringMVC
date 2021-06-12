@@ -32,7 +32,7 @@ public class PedidoControler {
         }                                                                                 // visto que passar um objeto passaria mais dados do que foi previsto.
         Pedido pedido = requisicao.toPedido();
         pedidosRepository.save(pedido);                                                  //salvar o pedido ndo banco de daos, usando JpaRepository
-        return "pedido/formulario";
+        return "redirect:/home";
     }
 
 
